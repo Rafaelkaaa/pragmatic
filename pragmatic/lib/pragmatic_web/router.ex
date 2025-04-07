@@ -21,6 +21,7 @@ defmodule PragmaticWeb.Router do
     live "/iland", IlandLivePage
     live "/sales", SalesLivePage
     live "/bingo", BingoLivePage
+    live "/flight", FlightsLievPage
   end
 
   # Other scopes may use custom stacks.
