@@ -1,0 +1,23 @@
+<div class="flex items-center justify-center mt-12">
+    <div>
+        <div class="sandbox_main">
+            <div class="flex justify-center">
+                <h1 class="text-5xl">Build A Sandbox</h1>
+                <svg class="size-12 ml-4">
+                    <use href="/images/icons.svg#palm" />
+                </svg>
+            </div>
+            <form id="sandbox" phx-change="count_sand" class="py-4">
+                <input type="number" name="length" value={@length} />
+                <span>feet</span>
+                <input type="number" name="width" value={@width} />
+                <span>feet</span>
+                <input type="number" name="depth" value={@depth} />
+                <span>inches</span>
+            </form>
+            <p>You need <%= @wight %> pounds of send</p>
+        </div>
+        <p :if={@price} class="price_sandbox"> Get your personal beach today for only $<%= @price %>
+        </p>
+    </div>
+</div>

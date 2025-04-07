@@ -1,0 +1,50 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+/* This file is for your main application CSS */
+
+.sandbox_main {
+  @apply bg-orange-100 border-4 border-stone-600 p-12 pr-0 w-max text-center text-blue-400;
+}
+
+#sandbox input {
+  @apply border-none bg-orange-50 rounded-xl text-blue-400;
+}
+
+#sandbox span {
+  @apply relative right-14 text-blue-200 text-sm;
+}
+
+.price_sandbox {
+  @apply text-center border-4 border-dashed border-green-500 text-green-500 text-2xl p-8 my-8;
+}
+
+#sales {
+  @apply flex flex-col items-center justify-center mt-12 text-center;
+}
+
+h1 {
+  @apply text-3xl font-bold;
+}
+
+#sales .dashboard {
+  @apply flex flex-row w-max my-12 border border-slate-100 shadow-lg rounded-xl space-x-4 p-4;
+}
+
+#sales .dashboard .value {
+  @apply text-6xl font-extrabold text-indigo-700;
+}
+
+#sales .dashboard .key {
+  @apply text-xl text-slate-500;
+}
+
+#sales .dashboard .node {
+  @apply px-16 py-4;
+}
+
+#sales button {
+  @apply relative right-96 px-6 py-2 rounded-lg shadow-sm border border-blue-200 bg-blue-50 text-indigo-700;
+}
