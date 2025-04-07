@@ -1,0 +1,29 @@
+<div class="flight">
+    <h1>Find flight</h1>
+  
+    <form phx-change="search">
+      <input 
+        type="search" 
+        name="search" 
+        placeholder="Search flight..." 
+      >
+    </form>
+  
+    <div class="table">
+      <ul>
+        <li :for={flight <- @flights}>
+          <div class="row">
+            <div>
+              <p class="number">Flight #{flight.number}</p>
+              <p class="date">Departs: {flight.departure_time}</p>
+            </div>
+            <div class="text-right">
+              <p class="way">{flight.origin} to {flight.destination}</p>
+              <p class="date">Arrives: {flight.arrival_time}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
