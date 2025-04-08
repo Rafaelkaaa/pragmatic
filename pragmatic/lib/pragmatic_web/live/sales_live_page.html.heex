@@ -1,0 +1,18 @@
+<div id="sales">
+    <h1>Snappy Sales</h1>
+    <div class="dashboard">
+        <div class="node">
+            <p class="value">{@orders}</p>
+            <p class="key">New Orders</p>
+        </div>
+        <div class="node">
+            <p class="value">${@amount}</p>
+            <p class="key">Sales Amounts</p>
+        </div>
+        <div class="node">
+            <p class="value">{@satisfaction}%</p>
+            <p class="key">Satisfaction</p>
+        </div>
+    </div>
+    <button phx-click="refresh">Refresh</button>
+</div>
