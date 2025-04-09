@@ -1,0 +1,31 @@
+<h1>Dealy boat Rentals</h1>
+<div class="boats">
+    <form phx-change="filter">
+        <select name="boat_type">
+            <option selected>All boat type</option>
+            <%= for boat_type <- @boat_types do %>
+                <option>{boat_type}</option>
+                <% end %>
+        </select>
+
+        <input type="checkbox" 
+        value="prise[]" 
+        value="$"
+        id="$"
+        checked="$"
+        >
+        <label for="$"></label>
+        <input type="hidden" name="prices[]" value="">
+
+    </form>
+    <div class="table">
+        <ul>
+            <li :for={boat <- @boats}>
+                <p>{boat.model}</p>
+                <p>{boat.type}</p>
+                <p>{boat.price}</p>
+                <img src={boat.image} alt={boat.model} />
+            </li>
+        </ul>
+    </div>
+</div>
