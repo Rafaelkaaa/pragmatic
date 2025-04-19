@@ -21,19 +21,24 @@ defmodule Pragmatic.Boats do
     Repo.all(Boat)
   end
 
-  def list_boats("All boat type") do
+  def list_boats("All") do
     list_boats()
   end
 
   def list_boats(filter) do
-    Repo.all(
-      from(
-        b in Boat,
-        where: b.type == ^filter
-      )
-    ) |> IO.inspect()
+    from(Boat)
+    |> filter_type(String.downcase(filter.type))
+    |> filter_price(filter.prices)
+    |> Repo.all()
   end
 
+  def filter_type(query, nil), do: query
+  def filter_type(query, "all"), do: query
+  def filter_type(query, type), do: query |> where(type: ^type)
+
+  def filter_price(query, [""]), do: query
+  def filter_price(query, []), do: query
+  def filter_price(query, prices), do: query |> where([b], b.price in ^prices)|> IO.inspect()
 
   @doc """
   Gets a single boat.
@@ -117,7 +122,12 @@ defmodule Pragmatic.Boats do
   end
 
   def list_boat_types(list) do
-    Enum.map(list, fn boat -> boat.type end)
+    Enum.map(list, fn boat -> String.capitalize(boat.type) end)
+    |> Enum.uniq()
+  end
+
+  def list_boat_prices(list) do
+    Enum.map(list, fn boat -> boat.price end)
     |> Enum.uniq()
   end
 end

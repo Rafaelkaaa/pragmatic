@@ -75,3 +75,38 @@ h1 {
 .flight .table .way {
   @apply text-end text-indigo-700 font-light;
 }
+
+.boats form {
+  @apply flex items-baseline justify-around;
+}
+
+.boats form .filters {
+  @apply flex items-baseline justify-around;
+}
+.boats form .filters select {
+  @apply appearance-none w-full bg-slate-200 border border-slate-400 text-slate-700 py-3 px-4 mr-4 rounded-lg font-semibold cursor-pointer;
+}
+.boats form .filters select:focus {
+  @apply outline-none bg-slate-200 border-slate-500;
+}
+.boats form .filters .prices {
+  @apply flex;
+}
+.boats form .filters .prices input[type="checkbox"] {
+  @apply  hidden ;
+}
+.boats form .filters .prices input[type="checkbox"]:checked + label {
+  @apply bg-indigo-300 border-indigo-500;
+}
+.boats form .filters .prices label {
+  @apply inline-block border-t border-b border-slate-400 bg-slate-300 py-3 px-4 text-lg font-semibold hover:bg-slate-400 hover:cursor-pointer;
+}
+.boats form .filters .prices label:first-of-type {
+  @apply border-l border-r rounded-l-lg;
+}
+.boats form .filters .prices label:last-of-type {
+  @apply border-l border-r rounded-r-lg;
+}
+.boats form .filters a {
+  @apply inline underline text-lg cursor-pointer;
+}
