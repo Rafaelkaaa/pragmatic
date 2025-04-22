@@ -23,6 +23,7 @@ defmodule PragmaticWeb.Router do
     live "/bingo", BingoLivePage
     live "/flight", FlightsLievPage
     live "/boat", BoatsLivePage
+
   end
 
   # Other scopes may use custom stacks.

@@ -53,11 +53,21 @@ h1 {
   @apply flex flex-col items-center justify-start min-h-screen mt-12;
 }
 
+
 .flight form {
   @apply p-6;
 }
 
 .flight .table {
+  @apply rounded-md border shadow-sm;
+}
+
+=======
+.flight form{
+  @apply p-6;
+}
+
+.flight .table{
   @apply rounded-md border shadow-sm;
 }
 
@@ -76,6 +86,7 @@ h1 {
 .flight .table .way {
   @apply text-end text-indigo-700 font-light;
 }
+
 
 .boats form {
   @apply flex items-baseline justify-around;
