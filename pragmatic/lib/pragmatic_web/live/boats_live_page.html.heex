@@ -1,36 +1,38 @@
 <h1>Dealy boat Rentals</h1>
 <div class="boats">
-    <form phx-change="filter">
-        <div class="filters">
-        <select name="boat_type">
-            <option selected>All</option>
-            <%= for boat_type <- @boat_types do %>
-                <option>{boat_type}</option>
-            <% end %>
-        </select>
-        <div class="prices">
-            <%= for price <- @boat_prices do %>
-              <input class=""
-                type="checkbox"
-                name="boat_prices[]"
-                value={price}
-                id={price}
-                checked={price in @filter.prices}
-              />
-              <label for={price}><%= price %></label>
-            <% end %>
+  <form phx-change="filter">
+    <div class="filters">
+      <select name="boat_type">
+        <option selected>All</option>
+        <%= for boat_type <- @boat_types do %>
+          <option>{boat_type}</option>
+          <% end %>
+      </select>
+      <div class="prices">
+        <%= for price <- @boat_prices do %>
+          <input class="" type="checkbox" name="boat_prices[]" value={price} id={price} checked={price in
+            @filter.prices} />
+          <label for={price}>
+            <%= price %>
+          </label>
+          <% end %>
             <input type="hidden" name="boat_prices[]" value="" />
-          </div>
-        </div>
-      </form>
-    <div class="table">
-        <ul>
-            <li :for={boat <- @boats}>
-                <p>{boat.model}</p>
-                <p>{boat.type}</p>
-                <p>{boat.price}</p>
-                <img src={boat.image} alt={boat.model} />
-            </li>
-        </ul>
+      </div>
     </div>
+  </form>
+
+  <ul class="cards">
+    <li :for={boat <- @boats}>
+      <p>{boat.model}</p>
+      <div class="flex justify-center">
+
+        <img src={boat.image} alt={boat.model} />
+      </div>
+      <div class="flex justify-between mx-12">
+        <p>{boat.type}</p>
+        <p>{boat.price}</p>
+      </div>
+    </li>
+  </ul>
+
 </div>
