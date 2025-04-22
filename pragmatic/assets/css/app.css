@@ -62,7 +62,6 @@ h1 {
   @apply rounded-md border shadow-sm;
 }
 
-=======
 .flight form{
   @apply p-6;
 }
