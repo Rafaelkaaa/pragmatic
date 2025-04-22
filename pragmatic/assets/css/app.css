@@ -26,7 +26,7 @@
 }
 
 h1 {
-  @apply text-3xl font-bold text-center;
+  @apply mt-12 text-3xl font-bold text-center;
 }
 
 #sales .dashboard {
@@ -74,4 +74,17 @@ h1 {
 
 .flight .table .way {
   @apply text-end text-indigo-700 font-light;
+}
+
+.athletes {
+  @apply mx-40 my-20 
+}
+.athletes form select{
+  @apply mr-8 bg-blue-50 border-0 rounded-lg shadow-lg
+}
+.athletes .cards{
+  @apply mt-12 grid grid-cols-4 gap-4
+}
+.athletes .cards .card{
+  @apply py-8 text-center bg-blue-50 p-4 rounded-lg shadow-lg
 }

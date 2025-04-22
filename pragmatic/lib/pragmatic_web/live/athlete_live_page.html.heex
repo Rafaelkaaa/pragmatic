@@ -1,0 +1,21 @@
+<h1>Athletes</h1>
+<div class="athletes">
+    <form phx-change="filter">
+        <select>
+            <%= Phoenix.HTML.Form.options_for_select(@statuses, @filter.status) %>
+        </select>       
+         <select>
+            <%= Phoenix.HTML.Form.options_for_select(@sports, @filter.sport) %>
+        </select>
+    </form>
+    <div class="cards">
+    <div class="card" :for={athlete <- @athletes}>
+        <p class="text-7xl mb-4">{athlete.emoji}</p>
+        <p>{athlete.name}</p>
+        <div class="flex justify-between items-center mt-4">
+            <p>{athlete.sport}</p>
+            <p class="bg-blue-200 py-1 px-2 rounded-lg">{athlete.status}</p>
+        </div>
+    </div>
+    </div>
+</div>

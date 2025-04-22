@@ -7,9 +7,9 @@
 # General application configuration
 import Config
 
-# config :pragmatic,
-#   ecto_repos: [Pragmatic.Repo],
-#   generators: [timestamp_type: :utc_datetime]
+config :pragmatic,
+  ecto_repos: [Pragmatic.Repo],
+  generators: [timestamp_type: :utc_datetime]
 
 # # Configures the endpoint
 config :pragmatic, PragmaticWeb.Endpoint,
