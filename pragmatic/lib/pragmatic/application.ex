@@ -8,6 +8,7 @@ defmodule Pragmatic.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      Pragmatic.Repo,
       PragmaticWeb.Telemetry,
       {DNSCluster, query: Application.get_env(:pragmatic, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Pragmatic.PubSub},
