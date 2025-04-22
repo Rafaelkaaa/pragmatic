@@ -67,7 +67,7 @@ h1 {
   @apply p-6;
 }
 
-.flight .table{
+.flight .table {
   @apply rounded-md border shadow-sm;
 }
 
